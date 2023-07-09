@@ -28,7 +28,19 @@ public class App {
         listStud2.add(s2);
         listStud2.add(s4);
         StudentSteam steam1=new StudentSteam(1);
-        steam1.addStudentGroup(listStud);
+        StudentGroup sg4580=new StudentGroup(listStud2, 4580);
+        StudentGroup sg8045=new StudentGroup(listStud, 8045);
+
+        
+        steam1.addStudentGroup(sg4580);
+        steam1.addStudentGroup(sg8045);
+       
+        steam1.showContain();
+        steam1.comparationSizeGroup();
+        System.out.println("======================");
+        steam1.showContain();
+        
+       
         
 
 

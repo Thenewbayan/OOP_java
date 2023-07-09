@@ -1,22 +1,26 @@
 package Domen;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
 import Interfaces.iIterable;
 
-public class StudentSteam implements iIterable{
+public class StudentSteam implements iIterable {
     private int steamnumber;
     private List<StudentGroup> studentGroups;
 
     public StudentSteam(int steamnumber) {
         this.steamnumber = steamnumber;
+        studentGroups = new ArrayList<StudentGroup>();
+
     }
 
     public StudentSteam(int steamnumber, List<StudentGroup> studentGroups) {
         this.steamnumber = steamnumber;
-        
+        studentGroups = new ArrayList<StudentGroup>();
+
     }
 
     public int getSteamnumber() {
@@ -35,11 +39,10 @@ public class StudentSteam implements iIterable{
         this.studentGroups = studentGroups;
     }
 
-    public void addStudentGroup(StudentSteam steam, StudentGroup group) {
-        steam.add(group);
+    public void addStudentGroup(StudentGroup group) {
+        studentGroups.add(group);
     }
 
-    
     @Override
     public Iterator<StudentGroup> iterator() {
         return studentGroups.iterator();
@@ -52,32 +55,35 @@ public class StudentSteam implements iIterable{
 
     @Override
     public void showContain() {
-            Iterator<StudentGroup> iterator = iterator();
-            
-            while (iterator.hasNext()) {
-                StudentGroup group = iterator.next();
-                System.out.println("Student Group " + group.getIdGroup() + ":");
-                for (Student student : group.getGroup()) {
-                    System.out.println(student.getName());
-                }
-                
-                if (iterator.hasNext()) {
-                    System.out.println("Next Group: " + iterator.next().getIdGroup());
-                }
-                
-                System.out.println();
+        Iterator<StudentGroup> iterator = iterator();
+
+        while (iterator.hasNext()) {
+            StudentGroup group = iterator.next();
+            System.out.println("Student Group " + group.getIdGroup() + ":");
+            for (Student student : group.getGroup()) {
+                System.out.println("name: " + student.getName() + "; " + "id: " + student.getId() + "; " + "age: "
+                        + student.getAge());
             }
+            System.out.println();
         }
 
-           
-    
-    
-
+    }
+    @Override
+    public void comparationSizeGroup() {
+        List<StudentGroup> groups = new ArrayList<>();
+        // Добавить студенческие группы в список groups
+        
+        groups.sort(Comparator.comparing(StudentGroup::getSize));
+        
+        for (StudentGroup group : groups) {
+            System.out.println("Student Group " + group.getIdGroup() + ":");
+            for (Student student : group.getGroup()) {
+                System.out.println(student.getName());
+            }
+            
+            System.out.println();
+        }
+    }
 }
 
-
-    
-    
-    
-   
 

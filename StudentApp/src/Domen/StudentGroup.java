@@ -1,9 +1,10 @@
 package Domen;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparator<StudentGroup> {
     private List<Student> group;
     private Integer idGroup;
 
@@ -27,8 +28,13 @@ public class StudentGroup implements Iterable<Student> {
     public void setIdGroup(Integer idGroup) {
         this.idGroup = idGroup;
     }
+    public int getSize(){
+        int size;
+        size=group.size();
+        return size;
+    }
 
-     @Override
+    @Override
     public String toString() {
         return "StudentGroup{" +
                 "group=" + group +
@@ -38,31 +44,28 @@ public class StudentGroup implements Iterable<Student> {
 
     @Override
     public Iterator<Student> iterator() {
-       return new Iterator<Student>() {
+        return new Iterator<Student>() {
 
-        private int counter;
+            private int counter;
 
-        @Override
-        public boolean hasNext() {
+            @Override
+            public boolean hasNext() {
 
-            if(counter<group.size())
-            {
-                return true;
+                if (counter < group.size()) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }            
-        }
 
-        @Override
-        public Student next() {            
-            return group.get(counter++);
-        }
-        
-       };
-        
+            @Override
+            public Student next() {
+                return group.get(counter++);
+            }
+
+        };
+
     }
-    
+
     
 }
