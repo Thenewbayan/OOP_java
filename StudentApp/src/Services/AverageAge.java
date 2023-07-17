@@ -19,7 +19,7 @@ public class AverageAge <T extends Person>{
         return pers;
     }
 
-    public void setPers(List<Person> pers) {
+    public void setPers(List<TPerson> pers) {
         this.pers = pers;
     }
     /**

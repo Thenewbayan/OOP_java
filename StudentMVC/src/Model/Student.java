@@ -5,7 +5,7 @@ package Model;
 
         private int id;
     
-        public Student(String name, int age, int id) {
+        public Student(String string, int i, int j) {
             super(name, age);
             this.id = id;
         }

@@ -14,6 +14,25 @@ public class ModelList implements iGetModel{
     public List<Student> getAllStudents(){
         return students;
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    /**
+     * @param index 
+     */
+    @Override
+    public void deleteStudent(int index) {
+        students.remove(index);
+    }
+        
+    }
+
     
     
-}
+   

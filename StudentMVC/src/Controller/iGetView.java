@@ -7,9 +7,6 @@ import Model.Student;
 public interface iGetView {
     void printAllStudents(List<Student> students);
 
-    // Метод выводит информацию о каждом студенте на консоль
-    void printAllStudent(List<Student> students);
-
     // Метод для запроса ввода пользователя, чтобы получить команду или данные от него
     String prompt(String msg);
 

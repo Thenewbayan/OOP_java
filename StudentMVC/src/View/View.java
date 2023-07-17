@@ -35,11 +35,7 @@ public class View implements iGetView{
         return null;
     }
 
-    @Override
-    public void printAllStudent(List<Student> students) {
-        // TODO Auto-generated method stub
-        
-    }
+    
 
     @Override
     public String prompt(String msg) {

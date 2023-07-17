@@ -1,13 +1,16 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import Controller.Controller;
+import Controller.iGetHMModel;
 import Controller.iGetModel;
 import Controller.iGetView;
+import Model.HashMapModel;
 import Model.ModelFile;
 import Model.ModelList;
 import Model.Student;
-import View.View;
+
 import View.ViewEng;
 
 public class App {
@@ -25,15 +28,18 @@ public class App {
         students.add(s4);
         students.add(s5);
         students.add(s6);
-
+        HashMap<Long, Student> studentsHM=new HashMap<Long, Student>();
+        
+        
         ModelFile fModel=new ModelFile("StudentDB.txt");
         //fModel.saveAllStudentToFile(students);
         iGetModel modelFile=fModel;
         iGetModel model=new ModelList(students);
-        iGetView view=new View();
+        iGetHMModel modelHM=new HashMapModel(null);
+        
         iGetView viewEng=new ViewEng();
 
-        Controller control=new Controller(modelFile, view, viewEng);
+        Controller control=new Controller(modelFile, viewEng);
         //control.update();
         control.runEng();
         //control.runRus();
