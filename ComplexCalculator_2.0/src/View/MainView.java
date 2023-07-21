@@ -1,135 +1,132 @@
 package View;
 
-
 import javax.swing.*;
 
 import Domen.ComplexNumber;
 import Service.Calculator;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainView extends JFrame implements ActionListener {
 
-    private JTextField firstRealField;
-    private JTextField firstImagField;
-    private JTextField secondRealField;
-    private JTextField secondImagField;
-    private JButton addButton;
-    private JButton substrButton;
-    private JButton multiplyButton;
-    private JButton divideButton;
-    private JButton clearButton; // добавляем кнопку очистить
-    private JTextField resultArea;
+    private JTextField firstRealField, firstImagField, secondRealField, secondImagField, resultArea;
+    private JButton addButton, substrButton, multiplyButton, divideButton, clearButton;
 
     public MainView() {
         setTitle("Complex Number Calculator");
-        setSize(400, 300);
+        setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
 
-        JLabel firstNumberLabel = new JLabel("First Number:");
-        firstNumberLabel.setBounds(20, 20, 100, 20);
-        add(firstNumberLabel);
+        // Создаем панель для компонентов
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(6, 2));
+
+        // Добавляем поля для ввода первого комплексного числа
+        JLabel firstNumberLabel = new JLabel("Первое число:");
+        panel.add(firstNumberLabel);
 
         firstRealField = new JTextField();
-        firstRealField.setBounds(20, 50, 50, 20);
-        add(firstRealField);
+        panel.add(firstRealField);
 
         JLabel plusLabel = new JLabel("+");
-        plusLabel.setBounds(80, 50, 10, 20);
-        add(plusLabel);
+        panel.add(plusLabel);
 
         firstImagField = new JTextField();
-        firstImagField.setBounds(100, 50, 50, 20);
-        add(firstImagField);
+        panel.add(firstImagField);
 
         JLabel iLabel1 = new JLabel("i");
-        iLabel1.setBounds(160, 50, 10, 20);
-        add(iLabel1);
+        panel.add(iLabel1);
 
-        JLabel secondNumberLabel = new JLabel("Second Number:");
-        secondNumberLabel.setBounds(20, 90, 100, 20);
-        add(secondNumberLabel);
+        // Добавляем поля для ввода второго комплексного числа
+        JLabel secondNumberLabel = new JLabel("Второе число:");
+        panel.add(secondNumberLabel);
 
         secondRealField = new JTextField();
-        secondRealField.setBounds(20, 120, 50, 20);
-        add(secondRealField);
+        panel.add(secondRealField);
 
         JLabel plusLabel2 = new JLabel("+");
-        plusLabel2.setBounds(80, 120, 10, 20);
-        add(plusLabel2);
+        panel.add(plusLabel2);
 
         secondImagField = new JTextField();
-        secondImagField.setBounds(100, 120, 50, 20);
-        add(secondImagField);
+        panel.add(secondImagField);
 
         JLabel iLabel2 = new JLabel("i");
-        iLabel2.setBounds(160, 120, 10, 20);
-        add(iLabel2);
+        panel.add(iLabel2);
 
+        // Добавляем кнопки для операций
         addButton = new JButton("+");
-        addButton.setBounds(20, 160, 50, 20);
         addButton.addActionListener(this);
-        add(addButton);
+        panel.add(addButton);
 
         substrButton = new JButton("-");
-        substrButton.setBounds(80, 160, 50, 20);
         substrButton.addActionListener(this);
-        add(substrButton);
+        panel.add(substrButton);
 
         multiplyButton = new JButton("*");
-        multiplyButton.setBounds(140, 160, 50, 20);
         multiplyButton.addActionListener(this);
-        add(multiplyButton);
+        panel.add(multiplyButton);
 
         divideButton = new JButton("/");
-        divideButton.setBounds(200, 160, 50, 20);
         divideButton.addActionListener(this);
-        add(divideButton);
+        panel.add(divideButton);
 
-        clearButton = new JButton("Clear"); // создаем кнопку очистить
-        clearButton.setBounds(260, 160, 80, 20); // задаем ее размеры и расположение
-        clearButton.addActionListener(this); // добавляем слушателя
-        add(clearButton); // добавляем на форму
-
-        JLabel resultLabel = new JLabel("Result:");
-        resultLabel.setBounds(20, 200, 50, 20);
-        add(resultLabel);
+        // Добавляем поле для вывода результата
+        JLabel resultLabel = new JLabel("Результат:");
+        panel.add(resultLabel);
 
         resultArea = new JTextField();
-        resultArea.setBounds(80, 200, 200, 20);
         resultArea.setEditable(false);
-        add(resultArea);
+        panel.add(resultArea);
+
+        // Добавляем кнопку для очистки полей
+        clearButton = new JButton("Очистить");
+        clearButton.addActionListener(this);
+        panel.add(clearButton);
+
+        // Добавляем панель на форму
+        add(panel);
+
+        setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        ComplexNumber first = new ComplexNumber(Double.parseDouble(firstRealField.getText()), Double.parseDouble(firstImagField.getText()));
-        ComplexNumber second = new ComplexNumber(Double.parseDouble(secondRealField.getText()), Double.parseDouble(secondImagField.getText()));
-        Calculator calculator = new Calculator(first, second);
+        // Проверяем введенные значения на корректность
+        try {
+            double firstReal = Double.parseDouble(firstRealField.getText());
+            double firstImag = Double.parseDouble(firstImagField.getText());
+            double secondReal = Double.parseDouble(secondRealField.getText());
+            double secondImag = Double.parseDouble(secondImagField.getText());
 
-        if (e.getSource() == addButton) {
-            resultArea.setText(calculator.add().toString());
-        } else if (e.getSource() == multiplyButton) {
-            resultArea.setText(calculator.multiply().toString());
-        } else if (e.getSource() == divideButton) {
-            resultArea.setText(calculator.divide().toString());
-        } else if (e.getSource() == substrButton) {
-            resultArea.setText(calculator.substraction().toString());
+            // Создаем объект калькулятора и передаем ему введенные числа
+            ComplexNumber first = new ComplexNumber(firstReal, firstImag);
+            ComplexNumber second = new ComplexNumber(secondReal, secondImag);
+            Calculator calculator = new Calculator(first, second);
 
-
-} else if (e.getSource() == clearButton) { // если нажата кнопка очистить
-            firstRealField.setText(""); // очищаем все поля
-            firstImagField.setText("");
-            secondRealField.setText("");
-            secondImagField.setText("");
-            resultArea.setText("");
+            // Выполняем операцию в зависимости от нажатой кнопки
+            if (e.getSource() == addButton) {
+                resultArea.setText(calculator.add().toString());
+            } else if (e.getSource() == substrButton) {
+                resultArea.setText(calculator.substraction().toString());
+            } else if (e.getSource() == multiplyButton) {
+                resultArea.setText(calculator.multiply().toString());
+            } else if (e.getSource() == divideButton) {
+                resultArea.setText(calculator.divide().toString());
+            } else if (e.getSource() == clearButton) { // если нажата кнопка очистить
+                firstRealField.setText(""); // очищаем все поля
+		firstImagField.setText("");
+                secondRealField.setText("");
+                secondImagField.setText("");
+                resultArea.setText("");
+            }
+        } catch (NumberFormatException ex) {
+            resultArea.setText("Ошибка ввода чисел");
         }
     }
 
     public static void main(String[] args) {
-        MainView mainView = new MainView();
-        mainView.setVisible(true);
+        new MainView();
     }
 }
