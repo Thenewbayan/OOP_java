@@ -1,0 +1,10 @@
+Sat Jul 22 01:26:01 MSK 2023Addiction: 5.0 + 6.0i and 4.0 + 7.0i = 9.0 + 13.0i
+Sat Jul 22 01:26:08 MSK 2023Multyplication: 5.0 + 6.0i and 4.0 + 7.0i = -22.0 + 59.0i
+Sat Jul 22 01:26:09 MSK 2023Division: 5.0 + 6.0i and 4.0 + 7.0i = 0.9538461538461539 - 0.16923076923076924i
+Sat Jul 22 01:37:31 MSK 2023Division: 2.0 + 4.0i and 3.0 + 7.0i = 0.5862068965517241 - 0.034482758620689655i
+Sat Jul 22 01:37:33 MSK 2023Substraction: 2.0 + 4.0i and 3.0 + 7.0i = -1.0 - 3.0i
+Sat Jul 22 01:37:34 MSK 2023Addiction: 2.0 + 4.0i and 3.0 + 7.0i = 5.0 + 11.0i
+Sat Jul 22 01:39:19 MSK 2023Addiction: 5.0 + 1.0i and 2.0 + 4.0i = 7.0 + 5.0i
+Sat Jul 22 01:40:13 MSK 2023Addiction: 2.0 + 0.0i and 5.0 + 3.0i = 7.0 + 3.0i
+Sat Jul 22 01:40:18 MSK 2023Addiction: 2.0 + 0.0i and 5.0 + 0.0i = 7.0 + 0.0i
+Sat Jul 22 01:50:01 MSK 2023 Division: 1.0 + 2.0i and 1.0 + 2.0i = 1.0 + 0.0i

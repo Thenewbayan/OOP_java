@@ -13,7 +13,7 @@ public class Calculator {
         this.first = first;
         this.second = second;
     }
-    Logger logger=new Logger();
+    
 
     public ComplexNumber getFirst() {
         return first;
@@ -39,6 +39,7 @@ public class Calculator {
     
     public ComplexNumber add() {
         ComplexNumber result=this.first.add(this.second);
+        Logger logger = new Logger();
         logger.log(new Date(), "Addiction", first, second, result);
         return result;
     }
@@ -46,6 +47,7 @@ public class Calculator {
     
     public ComplexNumber divide() {
         ComplexNumber result=this.first.divide(this.second);
+        Logger logger = new Logger();
         logger.log(new Date(), "Division", first, second, result);
         return result;
     }
@@ -53,6 +55,7 @@ public class Calculator {
    
     public ComplexNumber multiply() {
         ComplexNumber result=this.first.multiply(this.second);
+        Logger logger = new Logger();
         logger.log(new Date(), "Multyplication", first, second, result);
         return result;
     }
@@ -60,6 +63,7 @@ public class Calculator {
     
     public ComplexNumber substraction() {
         ComplexNumber result=this.first.substraction(this.second);
+        Logger logger = new Logger();
         logger.log(new Date(), "Substraction", first, second, result);
         return result;
     }

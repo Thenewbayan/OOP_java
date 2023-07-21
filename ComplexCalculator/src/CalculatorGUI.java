@@ -25,14 +25,14 @@ public class CalculatorGUI extends JFrame implements ActionListener {
         inputPanel.add(new JLabel("Imaginary part"));
         inputPanel.add(new JLabel(""));
         inputPanel.add(new JLabel("Number 1:"));
-        firstRealPartField = new JTextField(8);
+        firstRealPartField = new JTextField(5);
         inputPanel.add(firstRealPartField);
-        firstImaginaryPartField = new JTextField(8);
+        firstImaginaryPartField = new JTextField(5);
         inputPanel.add(firstImaginaryPartField);
         inputPanel.add(new JLabel("Number 2:"));
-        secondRealPartField = new JTextField(8);
+        secondRealPartField = new JTextField(5);
         inputPanel.add(secondRealPartField);
-        secondImaginaryPartField = new JTextField(8);
+        secondImaginaryPartField = new JTextField(5);
         inputPanel.add(secondImaginaryPartField);
 
         JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
@@ -60,7 +60,7 @@ public class CalculatorGUI extends JFrame implements ActionListener {
         add(resultPanel, BorderLayout.SOUTH);
 
         // Настройка окна
-        setSize(600, 600);
+        setSize(600, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);

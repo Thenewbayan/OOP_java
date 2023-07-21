@@ -21,8 +21,19 @@ public class ComplexNumber {
     public double getImaginaryPart() {
         return imaginaryPart;
     }
+    public void setRealPart(double realPart) {
+        this.realPart = realPart;
+    }
+
+    public void setImaginaryPart(double imaginaryPart) {
+        this.imaginaryPart = imaginaryPart;
+    }
 
     // Сложение комплексных чисел
+    /**
+     * @param number комплескное число для действия
+     * @return результатом возвращаем новый экземпляр 
+     */
     public ComplexNumber add(ComplexNumber number) {
         double newRealPart = this.realPart + number.getRealPart();
         double newImaginaryPart = this.imaginaryPart + number.getImaginaryPart();
@@ -52,5 +63,11 @@ public class ComplexNumber {
             return this.realPart + " + " + this.imaginaryPart + "i";
         }
     }
+
+    public char[] degree(int i) {
+        return null;
+    }
+
+    
 }
 
