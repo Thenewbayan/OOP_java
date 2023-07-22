@@ -9,6 +9,10 @@ public class Calculator {
     private ComplexNumber first;
     private ComplexNumber second;
     
+    /** класс совершения действия над числами
+     * @param first первое КЧ
+     * @param second второе КЧ
+     */
     public Calculator(ComplexNumber first, ComplexNumber second) {
         this.first = first;
         this.second = second;
@@ -37,6 +41,9 @@ public class Calculator {
     }
 
     
+    /** сложение КЧ
+     * @return экземпляр ComplexNumber в котором хранится результат действия
+     */
     public ComplexNumber add() {
         ComplexNumber result=this.first.add(this.second);
         Logger logger = new Logger();
@@ -45,6 +52,9 @@ public class Calculator {
     }
 
     
+    /** деление КЧ
+     * @return экземпляр ComplexNumber в котором хранится результат действия
+     */
     public ComplexNumber divide() {
         ComplexNumber result=this.first.divide(this.second);
         Logger logger = new Logger();
@@ -53,6 +63,9 @@ public class Calculator {
     }
 
    
+    /** умножение
+     * @return экземпляр ComplexNumber в котором хранится результат действия
+     */
     public ComplexNumber multiply() {
         ComplexNumber result=this.first.multiply(this.second);
         Logger logger = new Logger();
@@ -61,6 +74,9 @@ public class Calculator {
     }
 
     
+    /** вычитание КЧ
+     * @return экземпляр ComplexNumber в котором хранится результат действия
+     */
     public ComplexNumber substraction() {
         ComplexNumber result=this.first.substraction(this.second);
         Logger logger = new Logger();

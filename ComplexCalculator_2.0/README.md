@@ -1,18 +1,25 @@
-## Getting Started
+## Описание программы
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Добрый день!
+Это программа по простейшим действиям с комплексными числами (далее -КЧ)
+Данная программа может выполнять следубщие действия с КЧ: сложение, вычитание, умножение, деление.
+В программу встроен логизатор (находится в корне программы файл "log.txt" в котором хранятся данные о совершенных операциях, рекомендуется очищать данный файл с течением времени для корректной работы программы)
+Программа написана с использованием принципов ООП и SOLID.
+Версия программы - 2.0. При написании использовался ИИ ChatGPT и наработки сайтов habr.ru , javarush.com.
+"Если вам кажется что вы что-то придумали новое в программировании - посмотрите получше, потому что до вас это уже изобрели"
 
-## Folder Structure
+## Описание структуры
 
-The workspace contains two folders by default, where:
+Структура программы MVC
+Программа условно разбита на 3 блока - Domen, Service, View.
+Domen - хранятся файлы описывающие классы и интерфейсы работы с КЧ.
+Service - файлы совершения деятвий(сам кулькулятор, логизотор).
+View - рабочий интерфейс пользователя
+Описание методов, классов, интерфейсов и техническое комментарии к коду находятся в документации к коду
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Порядок работы
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Подготовка к работе: скопируйте репозиторий на свою рабочую станцию, откройте при помощи любого компилятора java
+Для запуска программы откройте файл App.java и запустите его.
+В открцвшемся рабочем окне выполните необходимые действия.
+После окончания работы закройте окно (для этого нажмите на символ "крестик" в верхней правой части робочего окна).

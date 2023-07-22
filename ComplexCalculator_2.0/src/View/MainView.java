@@ -4,24 +4,31 @@ import javax.swing.*;
 
 import Domen.ComplexNumber;
 import Service.Calculator;
+import Service.Logger;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class MainView extends JFrame implements ActionListener {
 
     private JTextField firstRealField, firstImagField, secondRealField, secondImagField, resultArea;
     private JButton addButton, substrButton, multiplyButton, divideButton, clearButton;
 
+    /**
+     * главное меню решено оформить при помощи JFrame. Большую часть этого раздела написал ИИ, но в современных реалиях надо
+     * привыкать что такой интрумент разработчику доступен и глупо его не использовать
+     * тем более если в процессе разбора понял наконец как этот JFrame работае и устроен
+     */
     public MainView() {
-        setTitle("Complex Number Calculator");
-        setSize(500, 300);
+        setTitle("Калькулятор комплексных чисел верс.2.0");
+        setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Создаем панель для компонентов
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(6, 2));
+        panel.setLayout(new GridLayout(4, 2));
 
         // Добавляем поля для ввода первого комплексного числа
         JLabel firstNumberLabel = new JLabel("Первое число:");
@@ -106,7 +113,7 @@ public class MainView extends JFrame implements ActionListener {
             Calculator calculator = new Calculator(first, second);
 
             // Выполняем операцию в зависимости от нажатой кнопки
-            if (e.getSource() == addButton) {
+            if (e.getSource() == addButton) {//кнопки по числу и значению операций
                 resultArea.setText(calculator.add().toString());
             } else if (e.getSource() == substrButton) {
                 resultArea.setText(calculator.substraction().toString());
@@ -116,17 +123,23 @@ public class MainView extends JFrame implements ActionListener {
                 resultArea.setText(calculator.divide().toString());
             } else if (e.getSource() == clearButton) { // если нажата кнопка очистить
                 firstRealField.setText(""); // очищаем все поля
-		firstImagField.setText("");
+		        firstImagField.setText("");
                 secondRealField.setText("");
                 secondImagField.setText("");
                 resultArea.setText("");
+                Logger logger=new Logger();
+                logger.logClear(new Date(), "work pole was cleaned");//логирование
             }
         } catch (NumberFormatException ex) {
             resultArea.setText("Ошибка ввода чисел");
+            Logger logger =new Logger();
+            logger.logFailure( new Date(), "Ошибка ввода чисел ;", " NumberFormatException");//логирование
         }
     }
 
     public static void main(String[] args) {
         new MainView();
+        Logger logger =new Logger();
+        logger.logStart(new Date(), "Start programm");//логирование
     }
 }

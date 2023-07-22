@@ -1,3 +1,22 @@
 Sat Jul 22 01:53:58 MSK 2023 Addiction: 1.0 + 1.0i and 1.0 + 1.0i = 2.0 + 2.0i
 Sat Jul 22 02:28:22 MSK 2023 Addiction: 2.0 + 1.0i and 2.0 + 1.0i = 4.0 + 2.0i
 Sat Jul 22 02:28:43 MSK 2023 Substraction: 2.0 + 1.0i and 3.0 + 6.0i = -1.0 - 5.0i
+Sat Jul 22 16:16:28 MSK 2023 Division: 15.0 + 1.0i and 1.0 + 15.0i = 0.13274336283185842 - 0.9911504424778761i
+Sat Jul 22 16:16:31 MSK 2023 Addiction: 15.0 + 1.0i and 1.0 + 15.0i = 16.0 + 16.0i
+Sat Jul 22 16:55:24 MSK 2023 Ошибка ввода чиселNumberFormatException
+Sat Jul 22 16:57:19 MSK 2023 Ошибка ввода чисел ;NumberFormatException
+Sat Jul 22 17:00:40 MSK 2023 Start programm
+Sat Jul 22 17:00:46 MSK 2023 Division: 12.0 + 1.0i and 2.0 + 4.0i = 1.4 - 2.3i
+Sat Jul 22 17:00:51 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:00:53 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:10:21 MSK 2023 Start programm
+Sat Jul 22 17:10:26 MSK 2023 Multyplication: 12.0 + 1.0i and 12.0 + 1.0i = 143.0 + 24.0i
+Sat Jul 22 17:10:26 MSK 2023 Division: 12.0 + 1.0i and 12.0 + 1.0i = 1.0 + 0.0i
+Sat Jul 22 17:10:27 MSK 2023 Substraction: 12.0 + 1.0i and 12.0 + 1.0i = 0.0 + 0.0i
+Sat Jul 22 17:10:27 MSK 2023 work pole was cleaned
+Sat Jul 22 17:10:32 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:10:33 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:10:37 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:10:41 MSK 2023 Ошибка ввода чисел ; NumberFormatException
+Sat Jul 22 17:10:44 MSK 2023 Division: 2.0 + 1.0i and 2.0 + 0.0i = 1.0 + 0.5i
+Sat Jul 22 17:10:45 MSK 2023 work pole was cleaned

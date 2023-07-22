@@ -29,7 +29,7 @@ public class ComplexNumber implements iMathOperation {
     public void setImagPart(double imagPart) {
         this.imagPart = imagPart;
     }
-
+    // переопределяем методы из интерфейса iMathOperation
     @Override
     public String toString() {
         if (this.imagPart < 0) {
